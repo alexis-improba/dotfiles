@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export PM_TMUX_DETACH=1
+
+pm open lidarvisor/tiles-generator
+pm open lidarvisor/tiles-supplier
+
+pm open lidarvisor/pilot
+pm open lidarvisor/interface
+
+echo "Lidarvisor sessions created"

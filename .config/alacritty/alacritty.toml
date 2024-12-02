@@ -2,7 +2,7 @@
 term = "xterm-256color"
 
 [shell]
-program = "/opt/homebrew/bin/bash"
+program = "/home/linuxbrew/.linuxbrew/bin/fish"
 
 [font]
 size = 14.0

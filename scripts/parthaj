@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+export PM_TMUX_DETACH=1
+
+pm open unhaj/directory-api
+pm open unhaj/parthaj-back
+pm open unhaj/parthaj-front
+
+echo "Parthaj sessions created"

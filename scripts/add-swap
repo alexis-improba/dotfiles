@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Update virtual RAM (swapfile) capacity
+#
+COUNT="${1:-8}"
+
+echo "add-swap: creating viratual RAM of ${COUNT}Go"
+
+# turing off current swap
+sudo swapoff -a
+
+# update swap file capacity
+sudo dd if=/dev/zero of=/swapfile bs=1G count="${COUNT}"
+
+# turn file into swapfile
+sudo mkswap /swapfile
+
+# activate virtual RAM
+sudo swapon /swapfile

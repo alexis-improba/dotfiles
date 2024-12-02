@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export PM_TMUX_DETACH=1
+
+pm open unhaj/ophaj-back
+pm open unhaj/ophaj-front
+
+echo "Ophaj sessions created"
