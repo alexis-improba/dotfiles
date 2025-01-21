@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd "${NEOVIM_DIR:-${HOME}/git/build/neovim}"
+
+git pull
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install

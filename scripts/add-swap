@@ -4,7 +4,7 @@
 #
 COUNT="${1:-8}"
 
-echo "add-swap: creating viratual RAM of ${COUNT}Go"
+echo "add-swap: creating virtual RAM of ${COUNT}Go"
 
 # turing off current swap
 sudo swapoff -a

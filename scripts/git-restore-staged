@@ -5,7 +5,7 @@
 git_root="$(git rev-parse --show-toplevel)"
 
 candidates="$(git diff --cached --name-only)"
-[[ -z "${candidates}" ]] && echo 'No more changes to unstage' && exit 0
+[[ -z "${candidates}" ]] && echo 'No more staged changes to unstage' && exit 0
 
 echo "${candidates}" \
     | tr ' ' '\n' \

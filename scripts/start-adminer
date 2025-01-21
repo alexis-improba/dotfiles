@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+
+ADMINER_DESIGN="lucas-sandery"
+PORT=8888
+
+networks="$(docker network ls | awk '{ print $2 };' | tail -n +2)"
+
+if [[ -n "${networks}" ]]; then
+    DOCKER_NETWORK="$(echo "${networks}" | gum filter --placeholder='Filter networks...')"
+fi
+
+DOCKER_CONTAINERS="$(docker container ls | awk '{ print $2 };' | tail -n +2)"
+
+# TODO logs
+[[ -z "${DOCKER_CONTAINERS}" ]] && exit 1
+
+DOCKER_CONTAINER="$(echo "${DOCKER_CONTAINERS}" | gum filter --placeholder='Filter db containers...')"
+
+docker run --link "${DOCKER_CONTAINERS}":db \
+    --env ADMINER_DESIGN="${ADMINER_DESIGN}" \
+    --network="${DOCKER_NETWORK}" \
+    --name adminer \
+    -p 8888:8080 \
+    --detach \
+    adminer
